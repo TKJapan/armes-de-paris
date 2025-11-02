@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import type { Weapon } from "../types/Weapon";
 
+import SilverSword from "../assets/SilverSword.png";
+import StaffofInfernalFlame from "../assets/StaffofInfernalFlame.png";
+import HerosBow from "../assets/Hero’sBow.png";
+
 const WeaponList: React.FC = () => {
   console.log("🧩 WeaponListコンポーネントが実行されました");
   const [weapons, setWeapons] = useState<Weapon[]>([]);
@@ -29,6 +33,13 @@ const WeaponList: React.FC = () => {
     fetchWeapons();
   }, []);
 
+  const getImage = (name: string) => {
+    if (name.includes("銀")) return SilverSword;
+    if (name.includes("魔炎")) return StaffofInfernalFlame;
+    if (name.includes("勇者")) return HerosBow;
+    return "";
+  };
+
 if (loading) return <p>読み込み中...</p>;
 if (error) return <p style={{ color: "red" }}>エラー: {error}</p>;
 
@@ -43,6 +54,7 @@ return (
         <thead>
           <tr>
             <th>ID</th>
+            <th>画像</th>
             <th>名前</th>
             <th>説明</th>
             <th>価格</th>
@@ -53,6 +65,12 @@ return (
           {weapons.map((w) => (
             <tr key={w.id}>
               <td>{w.id}</td>
+              <img
+                  src={getImage(w.weapon_name)}
+                  alt={w.weapon_name}
+                  width={80}
+                  style={{ borderRadius: "8px" }}
+                />
               <td>{w.weapon_name}</td>
               <td>{w.description}</td>
               <td>{w.price}</td>
