@@ -6,7 +6,7 @@
 ## 📘 プロジェクト概要
 「Armes de Paris」は、React × TypeScript × Laravel × PostgreSQL を使った  
 デモ用ランディングページ（LP）です。  
-パリの街角にあるアンティーク調の武器屋をモチーフに、  
+武器屋をモチーフに、  
 Stripeテスト決済で購入体験ができるLPを構築します。
 
 ---

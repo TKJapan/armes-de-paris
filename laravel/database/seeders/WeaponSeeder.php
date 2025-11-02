@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use App\Models\Weapon;
 
 class WeaponSeeder extends Seeder
 {
@@ -13,7 +14,8 @@ class WeaponSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('weapons')->insert([
+        // DB::table('weapons')->insert([
+        $weapons = [
             [
                 'weapon_name' => '銀の剣', 
                 'price' => 9800, 
@@ -37,7 +39,29 @@ class WeaponSeeder extends Seeder
                 'description' => '俊敏さを象徴する伝説の弓',
                 'created_at' => now(),
                 'updated_at' => now(),
-            ]
-        ]);
+            ],
+            [
+                'weapon_name' => '氷刃の槍',
+                'price' => 11000,
+                'weight' => 11.2,
+                'description' => '氷の魔力で敵を凍らせる槍',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'weapon_name' => '風の短剣',
+                'price' => 7600,
+                'weight' => 3.4,
+                'description' => '風の精霊が宿る軽量短剣',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+        ];
+        foreach ($weapons as $weapon) {
+            Weapon::updateOrCreate(
+                ['weapon_name' => $weapon['weapon_name']],
+                $weapon
+            );
+        }
     }
 }

@@ -1,0 +1,44 @@
+/* --- 矢印のデザイン全体 --- */
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+
+  --swiper-navigation-size: 24px; /* ← 矢印の大きさをここで調整！ */
+  --swiper-navigation-color: #1a3c65; /* ← 矢印の色 */
+}
+
+/* Hoverで拡大 */
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  transform: translateY(-50%) scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* 位置調整 */
+.swiper-button-prev {
+  left: 16px;
+}
+.swiper-button-next {
+  right: 16px;
+}
+
+/* スマホ用 */
+@media (max-width: 768px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 36px;
+    height: 36px;
+    --swiper-navigation-size: 14px;
+  }
+}
