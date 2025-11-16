@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import type { Weapon } from "../types/Weapon";
 import "./WeaponList.css";
 
@@ -91,46 +92,48 @@ return (
           }}
         >
             {weapons.map((w) => (
-              <SwiperSlide>
-              <div
-                key={w.id}
-                style={{
-                  background: "rgba(255, 255, 255, 0.75)",
-                  borderRadius: "1rem",
-                  boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
-                  backdropFilter: "blur(6px)",
-                  overflow: "hidden",
-                  transition: "transform 0.2s ease",
-                }}
-                onMouseEnter={(e) =>
-                  ((e.currentTarget.style.transform = "scale(1.03)"))
-                }
-                onMouseLeave={(e) =>
-                  ((e.currentTarget.style.transform = "scale(1.0)"))
-                }
-              >
-                <img
-                  src={imageMap[w.weapon_name] || ""}
-                  alt={w.weapon_name}
-                  style={{
-                    width: "100%",
-                    height: "180px",
-                    objectFit: "cover",
-                    borderBottom: "1px solid #ddd",
-                  }}
-                />
-                <div style={{ padding: "1rem" }}>
-                  <h3 style={{ color: "#1A3C65", margin: "0 0 0.5rem" }}>
-                    {w.weapon_name}
-                  </h3>
-                  <p style={{ fontSize: "0.9rem", color: "#333", margin: 0 }}>
-                    {w.description}
-                  </p>
-                  <p style={{ fontWeight: 600, color: "#1A3C65", marginTop: "0.5rem" }}>
-                    💰 {w.price} G
-                  </p>
-                </div>
-              </div>
+              <SwiperSlide key={w.id}>
+                <Link to={`/weapons/${w.id}`} style={{textDecoration:"none",color:"inherit"}}>
+                  <div
+                    key={w.id}
+                    style={{
+                      background: "rgba(255, 255, 255, 0.75)",
+                      borderRadius: "1rem",
+                      boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
+                      backdropFilter: "blur(6px)",
+                      overflow: "hidden",
+                      transition: "transform 0.2s ease",
+                    }}
+                    onMouseEnter={(e) =>
+                      ((e.currentTarget.style.transform = "scale(1.03)"))
+                    }
+                    onMouseLeave={(e) =>
+                      ((e.currentTarget.style.transform = "scale(1.0)"))
+                    }
+                  >
+                    <img
+                      src={imageMap[w.weapon_name] || ""}
+                      alt={w.weapon_name}
+                      style={{
+                        width: "100%",
+                        height: "180px",
+                        objectFit: "cover",
+                        borderBottom: "1px solid #ddd",
+                      }}
+                    />
+                    <div style={{ padding: "1rem" }}>
+                      <h3 style={{ color: "#1A3C65", margin: "0 0 0.5rem" }}>
+                        {w.weapon_name}
+                      </h3>
+                      <p style={{ fontSize: "0.9rem", color: "#333", margin: 0 }}>
+                        {w.description}
+                      </p>
+                      <p style={{ fontWeight: 600, color: "#1A3C65", marginTop: "0.5rem" }}>
+                        💰 {w.price} G
+                      </p>
+                    </div>
+                  </div>
+                </Link>
               </SwiperSlide>
             ))}
             </Swiper>

@@ -1,4 +1,5 @@
-import WeaponList from "./components/WeaponList.tsx";
+import WeaponList from "./components/WeaponList";
+
 
 const App: React.FC = () => {
   return (

@@ -1,0 +1,91 @@
+.detail-container {
+  background: linear-gradient(to bottom, #fdfdfd, #e7eef7);
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.back-link {
+  font-size: 1rem;
+  color: #1a3c65;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.detail-card {
+  max-width: 900px;
+  margin: 2rem auto;
+  display: flex;
+  gap: 2rem;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.detail-image {
+  width: 300px;
+  height: auto;
+  border-radius: 1rem;
+  object-fit: cover;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.detail-info {
+  flex: 1;
+}
+
+.weapon-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1a3c65;
+  margin-bottom: 1rem;
+}
+
+.weapon-description {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.price-box {
+  background: #1a3c65;
+  color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  display: inline-block;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.price-label {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.price-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 0.3rem;
+}
+
+.buy-button {
+  background: #ffb703;
+  color: #1a3c65;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.buy-button:hover {
+  background: #ffc933;
+  transform: scale(1.05);
+}
