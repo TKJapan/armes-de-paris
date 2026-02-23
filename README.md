@@ -6,7 +6,6 @@
 
 「Armes de Paris」は React × TypeScript × Laravel × PostgreSQL を使った
 デモ用ランディングページ（LP）です。
-武器屋をモチーフに、Stripe のテスト決済ができる LP を構築します。
 
 🧩 技術構成
 レイヤー	技術	説明
@@ -127,3 +126,8 @@ docker-compose up frontend
 React から武器データを取得：
 
 fetch("http://localhost:8000/api/weapons");
+
+再実行
+open -a Docker 
+docker compose up -d
+
