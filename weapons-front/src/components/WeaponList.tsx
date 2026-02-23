@@ -137,6 +137,101 @@ return (
               </SwiperSlide>
             ))}
             </Swiper>
+
+            {/* テキストのみモダンリスト */}
+            <div
+              style={{
+                maxWidth: "900px",
+                margin: "5rem auto 0",
+              }}
+            >
+              <h3
+                style={{
+                  fontSize: "1.6rem",
+                  fontWeight: 700,
+                  color: "#1A3C65",
+                  marginBottom: "2rem",
+                  letterSpacing: "0.5px",
+                }}
+              >
+                武器一覧
+              </h3>
+
+              <div
+                style={{
+                  borderRadius: "16px",
+                  overflow: "hidden",
+                  border: "1px solid #e5e7eb",
+                  background: "#ffffff",
+                }}
+              >
+                {weapons.map((w, index) => (
+                  <Link
+                    key={w.id}
+                    to={`/weapons/${w.id}`}
+                    style={{
+                      textDecoration: "none",
+                      color: "inherit",
+                    }}
+                  >
+                    <div
+                      style={{
+                        padding: "1.5rem 2rem",
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        borderBottom:
+                          index !== weapons.length - 1
+                            ? "1px solid #f0f0f0"
+                            : "none",
+                        transition: "all 0.2s ease",
+                        cursor: "pointer",
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.background = "#f8fafc";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.background = "#ffffff";
+                      }}
+                    >
+                      <div>
+                        <div
+                          style={{
+                            fontSize: "1.1rem",
+                            fontWeight: 600,
+                            color: "#1A3C65",
+                            marginBottom: "0.3rem",
+                          }}
+                        >
+                          {w.weapon_name}
+                        </div>
+
+                        <div
+                          style={{
+                            fontSize: "0.85rem",
+                            color: "#6b7280",
+                          }}
+                        >
+                          {w.description}
+                        </div>
+                      </div>
+
+                      <div
+                        style={{
+                          fontWeight: 700,
+                          fontSize: "1rem",
+                          color: "#1A3C65",
+                          minWidth: "120px",
+                          textAlign: "right",
+                        }}
+                      >
+                        {w.price.toLocaleString()} G
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
       </div>
     </div>
   );
