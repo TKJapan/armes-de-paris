@@ -49,12 +49,15 @@ const WeaponDetail: React.FC = () => {
           <h1 className="weapon-title">{weapon.weapon_name}</h1>
           <p className="weapon-description">{weapon.description}</p>
 
-          <div className="price-box">
-            <span className="price-label">価格</span>
-            <span className="price-value">💰 {weapon.price} G</span>
-          </div>
+          <div className="action-row">
+
+            <div className="price-box">
+              <span className="price-label">価格</span>
+              <span className="price-value">💰 {weapon.price} G</span>
+            </div>
 
           <button className="buy-button">🛒 この武器を購入する</button>
+        </div>
         </div>
       </div>
     </div>

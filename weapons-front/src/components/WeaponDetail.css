@@ -9,13 +9,13 @@
   font-size: 1rem;
   color: #1a3c65;
   text-decoration: none;
-  margin-bottom: 1rem;
   display: inline-block;
+  padding-bottom: 2.5rem;
 }
 
 .detail-card {
   max-width: 900px;
-  margin: 2rem auto;
+  margin: 3rem auto 2rem;
   display: flex;
   gap: 2rem;
   background: rgba(255, 255, 255, 0.6);
@@ -88,4 +88,11 @@
 .buy-button:hover {
   background: #ffc933;
   transform: scale(1.05);
+}
+
+.action-row {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1rem;
 }
